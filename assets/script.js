@@ -16,9 +16,10 @@ var numbers3 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 // Special character array.
 var specChar4 = ["+", "-", "&", "|", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":"];
 
-
+// variable for the "if-else staements."
 var enteredInfo;
 
+//  variable and event for activating prompts and confirms on main page button push.
 var getGen = document.querySelector("#generate");
 
 getGen.addEventListener("click", function () {
@@ -26,14 +27,10 @@ getGen.addEventListener("click", function () {
   document.getElementById("password").placeholder = finalpass;
 });
 
-
-// var combo1 =lowerCase1.concat(upperCase2, numbers3, specChar4)
-
-
-// beginning to generate password
+// listing out prompts and confirms.
 function generatePassword() {
 
-  length = parseInt(prompt("How long would you like your password?  Please enter a size between 8 and 128 characters:"));
+  length = parseInt(prompt("How long would you like your password?  Please enter a size between 8 and 128 characters and select your password parameters:"));
 
   if (!length) {
     alert("We need a size to continue...");
@@ -49,11 +46,11 @@ function generatePassword() {
     SpecCharConfirm = confirm("Would you like the password to have special characters?");
   };
 
-  // Begining 'If-Else' section:
+  // Begining 'If-Else' section for establishing our array:
 
   // First choice is if no criteria is met.
   if (!LCConfirm && !UCConfirm && !NumConfirm && !SpecCharConfirm) {
-    enteredInfo = alert("You must choose at lease one criteria for your password.");
+    enteredInfo = alert("Please choose the correct parameters for your password.");
   }
 
   // 'else if' statement if all (4) criteria are true
@@ -104,7 +101,7 @@ function generatePassword() {
     var pickChoices = enteredInfo[Math.floor(Math.random() * enteredInfo.length)];
     tempArray.push(pickChoices);
   }
-
+// code for turning our temporary password array into a string.
   var tempArray = tempArray.join("")
   UserInput(tempArray)
   return tempArray;
@@ -126,35 +123,3 @@ function writePassword() {
 
 
 
-//return unique password based on user's submitted criteria
-
-
-// xxxxGIVEN I need a new, secure password
-//  xxxxxTHEN I am presented with a series of prompts for password criteria
-//  xxxHow many prompts do i need?
-
-// x1. confirm for lowercase
-// x2. confirm for uppercase
-// x3. confirm for number
-// x4. confirm for special character
-// x5. prompt for password lenght between 8 and 128 characters.
-
-
-
-// xxxxx WHEN prompted for password criteria
-// xxxxx THEN I select which criteria to include in the password
-
-// WHEN prompted for the length of the password
-// xTHEN I choose a length of at least 8 characters and no more than 128 characters
-
-// WHEN prompted for character types to include in the password
-// xTHEN I choose lowercase, uppercase, numeric, and/or special characters
-
-// WHEN I answer each prompt
-// xTHEN my input should be validated and at least one character type should be selected
-
-// WHEN all prompts are answered
-// xTHEN a password is generated that matches the selected criteria
-
-// WHEN the password is generated
-// xTHEN the password is either displayed in an alert or written to the page
