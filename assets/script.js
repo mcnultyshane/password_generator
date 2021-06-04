@@ -38,7 +38,7 @@ function generatePassword() {
   } else if (length < 8) {
     length = parseInt(prompt("We need a number of 8 or greater."));
   } else if (length > 128) {
-    length = parseInt(prompt("That's too large!  Less that 128 characters, please."));
+    length = parseInt(prompt("That's too large!  Less than 128 characters, please."));
   } else {
     LCConfirm = confirm("Would you like the password to have lower case letters?");
     UCConfirm = confirm("Would you like the password to have UPPER CASE letters?");
