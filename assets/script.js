@@ -1,5 +1,5 @@
-// Assignment Code variables
-// beginning entered value form the user.
+// Assigning Code variables.
+// beginning with the variables needed for the entered value from the user.
 var length;
 var LCConfirm;
 var UCConfirm
